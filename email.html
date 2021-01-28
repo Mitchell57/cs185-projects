@@ -1,0 +1,68 @@
+<!-- 
+
+PR1 
+CS185 - Human Computer Interaction
+Mitchell Lewis
+
+Sources:
+
+Dynamic rows
+https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp
+
+Click to expand
+https://www.w3schools.com/howto/howto_css_modal_images.asp
+https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+https://techstacker.com/close-modal-click-outside-vanilla-javascript/
+
+Scroll to Top
+https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <div class="topnav">
+          <a href="index.html">Text</a>
+          <a href="images.html">Image</a>
+          <a href="videos.html">Video</a>
+          <a href="table.html">Table</a>
+          <a class="active" href="email.html">Email</a>
+        </div> 
+        <div class="form">
+            <form name="form1" id="email-form">
+                <label for="email">Email</label><br>
+                <input type="text" id="email" name="email">
+
+                <br>
+                <br>
+
+                <input id="submit" type="submit" value="Submit", onclick="ValidateEmail(document.form1.email)">
+            </form>
+        </div>
+        
+        <script>
+            
+            function ValidateEmail(input) 
+            {
+                var validRegex =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                if(input.value.match(validRegex))
+                {
+                    alert("Email successfully recorded");
+                }
+                else {
+                    alert("Invalid email address");
+                }
+            }
+        
+        </script>
+        
+    </body>
+
+</html>

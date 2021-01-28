@@ -19,32 +19,113 @@ Mitchell Lewis
           <a href="images.html">Image</a>
           <a class="active" href="videos.html">Video</a>
           <a href="table.html">Table</a>
+          <a href="email.html">Email</a>
         </div> 
         
-        <div class="gallery">
+        <div class="gallery" id="gallery">
             <div class="row">
               <div class="column">
-                 <video width="500" height="281" controls>
-                  <source src="vid/riff-chromatic_demo.mov" type="video/mp4">
-                Your browser does not support the video tag.
-                </video> 
+                 <div class="vid1" id="vid1">
+                  <video  width="500" height="281">
+                    <source id="src1" src="vid/riff-chromatic_demo.mov" type="video/mp4">
+                      <param name="wmode" value="transparent" />
+                    Your browser does not support the video tag.
+                  </video> 
+                 </div>
               </div>
               <div class="column">
-                 <video width="500" height="281" controls>
-                  <source src="vid/howufeel-nebula_demo.mov" type="video/mp4">
-                Your browser does not support the video tag.
-                </video> 
+                <div class="vid2">
+                    <video  id="vid2" width="500" height="281">
+                        <source id="src2" src="vid/howufeel-nebula_demo.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video> 
+                </div>  
               </div>
-                <div class="column">
-                 <video width="500" height="281" controls>
-                  <source src="vid/wonder-nebula_demo.mov" type="video/mp4">
-                Your browser does not support the video tag.
-                </video> 
-              </div>
+              <div class="column">
+                  <div class="vid3">
+                    <video id="vid3" width="500" height="281">
+                        <source id="src3" src="vid/wonder-nebula_demo.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video> 
+                  </div>
+               </div>
             </div>
         </div>
         
+        <div id="modal1" class="modal">
+            <span class="close">&times;</span>
+            <video class="modal-content" id="modal-vid1" controls>
+                <source id="modal-src" src="vid/riff-chromatic_demo.mov" type="video/mp4">
+            </video>
+        </div>
+        
+        <div id="modal2" class="modal">
+            <span class="close">&times;</span>
+            <video class="modal-content" id="modal-vid1" controls>
+                <source id="modal-src" src="vid/howufeel-nebula_demo.mov" type="video/mp4">
+            </video>
+        </div>
+        
+        <div id="modal3" class="modal">
+            <span class="close">&times;</span>
+            <video class="modal-content" id="modal-vid1" controls>
+                <source id="modal-src" src="vid/wonder-nebula_demo.mov" type="video/mp4">
+            </video>
+        </div>
+        
+        <script>
+            // Get the modals
+            var modal1 = document.getElementById("modal1");
+            var modal2 = document.getElementById("modal2");
+            var modal3 = document.getElementById("modal3");
+            
+            function expand1() {
+                modal1.style.display = "block";
+            }
+            function expand2() {
+                modal2.style.display = "block";
+            }
+            function expand3() {
+                modal3.style.display = "block";
+            }
+            
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var vid1 = document.getElementById("vid1");
+            var vid2 = document.getElementById("vid2");
+            var vid3 = document.getElementById("vid3");
+            
+            vid1.addEventListener("click", function(){ expand1(); });
+            vid2.addEventListener("click", function(){ expand2(); });
+            vid3.addEventListener("click", function(){ expand3(); });
+        
+            modal1.addEventListener(
+              "click",
+              function(event) {
+                if ( !event.target.matches(".modal-content")) {
+                  modal1.style.display = "none";
+                }
+              },
+              false
+            )
+            modal2.addEventListener(
+              "click",
+              function(event) {
+                if ( !event.target.matches(".modal-content")) {
+                  modal2.style.display = "none";
+                }
+              },
+              false
+            )
+            modal3.addEventListener(
+              "click",
+              function(event) {
+                if ( !event.target.matches(".modal-content")) {
+                  modal3.style.display = "none";
+                }
+              },
+              false
+            )
 
+        </script>
     </body>
-
 </html>
